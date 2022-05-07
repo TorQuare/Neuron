@@ -16,3 +16,4 @@ Working before GA: 0.0 Working with GA: 0.00897526741027832
 Working before GA: 0.0 Working with GA: 0.0019943714141845703
 Working before GA: 0.0 Working with GA: 0.00698089599609375
 Working before GA: 0.0 Working with GA: 0.014960527420043945
+Working before GA: 0.0 Working with GA: 0.040207624435424805 S array length: 15 Mutation percent: 8

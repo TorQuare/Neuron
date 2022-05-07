@@ -3,10 +3,33 @@ import numpy
 import time
 import os
 
+# Zad 4 - wybór wartości długości tablicy S oraz procentu mutacji
+print("Input selected value: \n1) S len = 15\n2) S len = 25\n3) S len = 35\n4) S len = 45\nPicked: ")
+arr_value = int(input())
+print("Input selected value of gens percent: \n1) 8%\n2) 5%\n3) 4%\n4) 3%\nPicked: ")
+gens_value = int(input())
+
+
 #Zad 3.C - rozpoczęćie pomiaru czasu
 start = time.time()
 
 S = [1, 2, 3, 6, 10, 17, 25, 29, 30, 41, 51, 60, 70, 79, 80]
+
+# Zad 4.A - generowanie nowej tablicy S
+if arr_value != 1:
+    expand_value = 0
+    # wygenerowane losowo liczy podzielne przez 2
+    new_values = [24, 24, 92, 92, 34, 70, 82, 70, 80, 30, 6, 78, 18, 26, 50, 38, 14, 22,
+                  8, 78, 92, 12, 98, 36, 94, 30, 86, 52, 6, 78]
+    if arr_value == 2:
+        expand_value = 10
+    if arr_value == 3:
+        expand_value = 20
+    if arr_value == 4:
+        expand_value = 30
+
+    for i in range(expand_value):
+        S.append(new_values[i])
 
 #definiujemy parametry chromosomu
 #geny to liczby: 0 lub 1
@@ -45,7 +68,16 @@ crossover_type = "single_point"
 #mutacja ma dzialac na ilu procent genow?
 #trzeba pamietac ile genow ma chromosom
 mutation_type = "random"
-mutation_percent_genes = 8
+
+# Zad 4.B - wybrane poziomy mutacji
+if gens_value == 1:
+    mutation_percent_genes = 8
+if gens_value == 2:
+    mutation_percent_genes = 5
+if gens_value == 3:
+    mutation_percent_genes = 4
+if gens_value == 4:
+    mutation_percent_genes = 3
 
 # Zad 3.C - pomiar czasu przed algorytmem GA
 end_first = time.time()
@@ -88,11 +120,13 @@ if solution_fitness == 0:
 # Zad 3.C - wypisanie pomiaru czasu
 first_timelaps = end_first - start
 sec_timelaps = end_sec - start
-print("Working before GA: ", first_timelaps, " Working with GA: ", sec_timelaps)
+print("Working before GA: ", first_timelaps, " Working with GA: ", sec_timelaps, " S array length: ", len(S),
+      " Mutation percent:", mutation_percent_genes)
 
-# Zad 3.D - zapis pomiaru wartości czasu
+# Zad 3.D / Zad 4.C - zapis pomiaru wartości czasu oraz
 file = open("Runs.txt", 'a')
-file.write("Working before GA: " + str(first_timelaps) + " Working with GA: " + str(sec_timelaps) + "\n")
+file.write("Working before GA: " + str(first_timelaps) + " Working with GA: " + str(sec_timelaps) +
+           " S array length: " + str(len(S)) + " Mutation percent: " + str(mutation_percent_genes) + "\n")
 file.close()
 
 #wyswietlenie wykresu: jak zmieniala sie ocena na przestrzeni pokolen
