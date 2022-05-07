@@ -9,7 +9,6 @@ arr_value = int(input())
 print("Input selected value of gens percent: \n1) 8%\n2) 5%\n3) 4%\n4) 3%\nPicked: ")
 gens_value = int(input())
 
-
 #Zad 3.C - rozpoczęćie pomiaru czasu
 start = time.time()
 
