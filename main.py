@@ -125,8 +125,8 @@ print("Working before GA: ", first_timelaps, " Working with GA: ", sec_timelaps,
 
 # Zad 3.D / Zad 4.C - zapis pomiaru wartości czasu oraz
 file = open("Runs.txt", 'a')
-file.write("Working before GA: " + str(first_timelaps) + " Working with GA: " + str(sec_timelaps) +
-           " S array length: " + str(len(S)) + " Mutation percent: " + str(mutation_percent_genes) + "\n")
+file.write("Working before GA: " + str(first_timelaps) + "; Working with GA: " + str(sec_timelaps) +
+           "; S array length: " + str(len(S)) + "; Mutation percent: " + str(mutation_percent_genes) + " \n")
 file.close()
 
 #wyswietlenie wykresu: jak zmieniala sie ocena na przestrzeni pokolen
